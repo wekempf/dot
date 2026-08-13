@@ -32,8 +32,14 @@ else
     log "mise is already installed"
 fi
 
-log "initializing chezmoi from $REPO"
-chezmoi init --apply "$REPO"
+source_dir="$(chezmoi source-path)"
+if [ -d "$source_dir/.git" ]; then
+    log "updating and applying existing chezmoi source"
+    chezmoi update
+else
+    log "initializing chezmoi from $REPO"
+    chezmoi init --apply "$REPO"
+fi
 
 log "installing globally configured mise tools"
 mise -C "$HOME" install --yes
