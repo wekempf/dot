@@ -1,7 +1,40 @@
 [tools]
+{{ if not (or (lookPath "bat") (lookPath "batcat")) -}}
+bat = "0.26.1"
+{{ end -}}
+{{ if not (lookPath "copilot") -}}
+copilot = "1.0.79"
+{{ end -}}
+{{ if not (lookPath "delta") -}}
+delta = "0.19.2"
+{{ end -}}
+{{ if not (lookPath "direnv") -}}
+direnv = "2.37.1"
+{{ end -}}
+{{ if not (lookPath "eza") -}}
+eza = "0.23.5"
+{{ end -}}
+{{ if not (or (lookPath "fd") (lookPath "fdfind")) -}}
+fd = "10.4.2"
+{{ end -}}
+{{ if not (lookPath "fzf") -}}
+fzf = "0.74.2"
+{{ end -}}
+{{ if not (lookPath "herdr") -}}
+herdr = "0.8.0"
+{{ end -}}
 {{ if not (lookPath "just") -}}
 just = "1.56.0"
 {{ end -}}
+{{ if not (lookPath "nvim") -}}
+neovim = "0.12.4"
+{{ end -}}
 {{ if not (lookPath "node") -}}
 node = "26.5.1"
+{{ end -}}
+{{ if not (lookPath "rg") -}}
+ripgrep = "15.2.0"
+{{ end -}}
+{{ if not (lookPath "zoxide") -}}
+zoxide = "0.10.0"
 {{ end -}}

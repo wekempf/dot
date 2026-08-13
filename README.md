@@ -47,7 +47,8 @@ chezmoi apply
 ## Current migration scope
 
 The initial migration manages `~/.zshenv`, `~/.config/zsh`, and the global
-mise configuration. Just and Node.js are installed through mise when they are
-not already available from the host or container. Machine-local
+mise configuration. The command-line tools used by the zsh configuration are
+installed through mise when they are not already available from the host or
+container. Machine-local
 `~/.config/zsh/local_env.zsh`, shell history, completion dumps, and other
 runtime state are intentionally unmanaged.
