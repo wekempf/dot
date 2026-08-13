@@ -13,8 +13,9 @@ curl -fsSL https://raw.githubusercontent.com/wekempf/dot/main/setup.sh | sh
 
 The bootstrapper installs `chezmoi` and `mise` into
 `${XDG_BIN_HOME:-$HOME/.local/bin}` when they are missing, applies this
-repository with chezmoi, and changes the login shell to zsh when zsh and
-`chsh` are available. It does not require root or `sudo`.
+repository with chezmoi, installs the globally configured mise tools, and
+changes the login shell to zsh when zsh and `chsh` are available. It does not
+require root or `sudo`.
 
 The login-shell change can require your account password. If the operating
 system does not permit the change, the bootstrapper prints the command to run
@@ -45,6 +46,7 @@ chezmoi apply
 
 ## Current migration scope
 
-The initial migration manages `~/.zshenv` and `~/.config/zsh`. Machine-local
+The initial migration manages `~/.zshenv`, `~/.config/zsh`, and the global
+mise configuration. Node.js is globally available through mise. Machine-local
 `~/.config/zsh/local_env.zsh`, shell history, completion dumps, and other
 runtime state are intentionally unmanaged.

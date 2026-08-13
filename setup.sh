@@ -35,6 +35,9 @@ fi
 log "initializing chezmoi from $REPO"
 chezmoi init --apply "$REPO"
 
+log "installing globally configured mise tools"
+mise -C "$HOME" install --yes
+
 if [ "${DOT_CHANGE_SHELL:-1}" = "0" ]; then
     log "login shell change disabled by DOT_CHANGE_SHELL=0"
 elif command -v zsh >/dev/null 2>&1; then
